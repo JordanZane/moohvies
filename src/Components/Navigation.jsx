@@ -89,6 +89,12 @@ const Navigation = () => {
                   </Dropdown>
                 </li>
               </ul>
+              <form>
+                <button type="submit">
+                  <i className="fa-solid fa-magnifying-glass"></i>
+                </button>
+                <input type="text" placeholder="Search for movie" />
+              </form>
             </nav>
           </div>
         </div>

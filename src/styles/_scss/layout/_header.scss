@@ -4,9 +4,11 @@ header {
     padding: 0;
   }
   .menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     ul {
       display: flex;
-
       li {
         margin: 0 15px;
         a {
@@ -21,6 +23,7 @@ header {
           width: 90%;
           height: 2px;
           background-color: $color-pink;
+          animation: growX 0.4s ease-in;
         }
       }
       .dropdown {
@@ -36,6 +39,28 @@ header {
         }
         .dropdown-menu.show {
           display: initial;
+        }
+      }
+    }
+    form {
+      button {
+        background: unset;
+        border: unset;
+        i {
+          color: $color-white;
+          transition: all 0.4s ease-in;
+          &:hover {
+            color: $color-pink;
+            transform: scale(1.2);
+          }
+        }
+      }
+      input {
+        background: unset;
+        border: unset;
+        color: $color-white;
+        &::placeholder {
+          color: $color-white;
         }
       }
     }
