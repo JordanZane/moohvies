@@ -19,7 +19,16 @@ body {
     position: relative;
     padding: 40px 0;
     letter-spacing: 4px;
-    color: #eab0d0;
+    text-align: center;
+    img {
+      margin-left: 30px;
+    }
+    a {
+      color: $color-pink;
+      &:hover {
+        color: $color-pink;
+      }
+    }
     margin: 0;
     @include respond-to('medium') {
       font-size: 45px;
@@ -109,5 +118,13 @@ img {
     background-color: $color-pink;
     color: $color-white;
     border-radius: 11px;
+  }
+}
+
+a {
+  color: $color-white;
+  text-decoration: none;
+  &.active {
+    color: $color-pink;
   }
 }

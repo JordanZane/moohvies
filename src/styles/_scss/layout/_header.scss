@@ -1,0 +1,43 @@
+header {
+  .nav-bg {
+    background-color: $color-grey-bg;
+    padding: 0;
+  }
+  .menu {
+    ul {
+      display: flex;
+
+      li {
+        margin: 0 15px;
+        a {
+          position: relative;
+        }
+        a.active::after {
+          content: '';
+          position: absolute;
+          left: 50%;
+          bottom: -4px;
+          transform: translate(-50%, 0);
+          width: 90%;
+          height: 2px;
+          background-color: $color-pink;
+        }
+      }
+      .dropdown {
+        display: flex;
+        align-items: center;
+        #dropdownMenuButton {
+          background-color: unset;
+          border: unset;
+          padding: 0;
+        }
+        .dropdown-menu {
+          display: none;
+        }
+        .dropdown-menu.show {
+          display: initial;
+        }
+      }
+    }
+  }
+}
