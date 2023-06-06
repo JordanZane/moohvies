@@ -1,6 +1,6 @@
 import React from 'react';
 import Header from '../Components/Header';
-import Category from '../Components/Category';
+import MoviesHome from '../Components/MoviesHome';
 
 const Home = () => {
   return (
@@ -11,7 +11,11 @@ const Home = () => {
           <div className="container">
             <div className="row">
               <div className="col-md-12">
-                <Category categoryName={'action'} />
+                <MoviesHome categoryName={'Action'} idCategory={'28'} />
+                <MoviesHome
+                  categoryName={'Science Fiction'}
+                  idCategory={'878'}
+                />
               </div>
             </div>
           </div>
