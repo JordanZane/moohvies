@@ -28,6 +28,36 @@ const Navigation = () => {
                       <Dropdown.Item as={NavLink} to="/genres/comedy">
                         Comedy
                       </Dropdown.Item>
+                      <Dropdown.Item as={NavLink} to="/genres/drama">
+                        Drama
+                      </Dropdown.Item>
+                      <Dropdown.Item as={NavLink} to="/genres/romance">
+                        Romance
+                      </Dropdown.Item>
+                      <Dropdown.Item as={NavLink} to="/genres/horror">
+                        Horror
+                      </Dropdown.Item>
+                      <Dropdown.Item as={NavLink} to="/genres/thriller">
+                        Thriller
+                      </Dropdown.Item>
+                      <Dropdown.Item as={NavLink} to="/genres/crime">
+                        Crime
+                      </Dropdown.Item>
+                      <Dropdown.Item as={NavLink} to="/genres/mystery">
+                        Mystery
+                      </Dropdown.Item>
+                      <Dropdown.Item as={NavLink} to="/genres/familly">
+                        Familly
+                      </Dropdown.Item>
+                      <Dropdown.Item as={NavLink} to="/genres/familly">
+                        Documentary
+                      </Dropdown.Item>
+                      <Dropdown.Item as={NavLink} to="/genres/western">
+                        Western
+                      </Dropdown.Item>
+                      <Dropdown.Item as={NavLink} to="/genres/animation">
+                        Animation
+                      </Dropdown.Item>
                     </Dropdown.Menu>
                   </Dropdown>
                 </li>
@@ -45,6 +75,15 @@ const Navigation = () => {
                       </Dropdown.Item>
                       <Dropdown.Item as={NavLink} to="/years/1990-1999">
                         1990-1999
+                      </Dropdown.Item>
+                      <Dropdown.Item as={NavLink} to="/years/2000-2009">
+                        2000-2009
+                      </Dropdown.Item>
+                      <Dropdown.Item as={NavLink} to="/years/2010-2019">
+                        2010-2019
+                      </Dropdown.Item>
+                      <Dropdown.Item as={NavLink} to="/years/2020-2022">
+                        2020-2022
                       </Dropdown.Item>
                     </Dropdown.Menu>
                   </Dropdown>
