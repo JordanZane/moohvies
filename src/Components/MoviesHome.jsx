@@ -19,16 +19,26 @@ const Category = ({ categoryName, idCategory }) => {
     )
       .then((response) => response.json())
       .then((response) => setMovies(response.results.slice(0, 6)))
-      .then((response) => console.log(response))
       .catch((err) => console.error(err));
   }, [idCategory]);
 
   return (
     <div className="category-container">
-      <h2>{categoryName}</h2>
-      {movies.map((movie) => (
-        <h3 key={movie.id}>{movie.title}</h3>
-      ))}
+      <div className="category-header">
+        <h2>{categoryName}</h2>
+      </div>
+      <div className="movies-container">
+        {movies.map((movie) => (
+          <div className="movie-content" key={movie.id}>
+            <img
+              src={`https://image.tmdb.org/t/p/w200/${movie.poster_path}`}
+              alt={movie.title}
+            />
+
+            <h3>{movie.title}</h3>
+          </div>
+        ))}
+      </div>
     </div>
   );
 };

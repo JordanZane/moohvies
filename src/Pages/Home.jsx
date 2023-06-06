@@ -16,6 +16,7 @@ const Home = () => {
                   categoryName={'Science Fiction'}
                   idCategory={'878'}
                 />
+                <MoviesHome categoryName={'Comedy'} idCategory={'35'} />
               </div>
             </div>
           </div>
