@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 
-const Category = ({ categoryName, idCategory }) => {
+const MoviesHome = ({ categoryName, idCategory }) => {
   const [movies, setMovies] = useState([]);
 
   useEffect(() => {
@@ -26,17 +27,27 @@ const Category = ({ categoryName, idCategory }) => {
     <div className="category-container">
       <div className="category-header">
         <h2>{categoryName}</h2>
+        <Link to={'/genres/' + idCategory}>
+          See more <i className="fa-solid fa-plus"></i>
+        </Link>
       </div>
       <div className="movies-container">
         {movies.map((movie) => (
-          <div className="movie-content" key={movie.id}>
+          <div
+            className="movie-content col-xl-2 col-lg-4 col-md-6 col-sm-12"
+            key={movie.id}
+          >
             <img
               src={`https://image.tmdb.org/t/p/w200/${movie.poster_path}`}
               alt={movie.title}
             />
+            <div className="infos">
+              <h3>{movie.title}</h3>
 
-            <h3>{movie.title}</h3>
-            <p>{movie.vote_average}/10</p>
+              <p>
+                {movie.vote_average}/10<i className="fa-solid fa-star"></i>
+              </p>
+            </div>
           </div>
         ))}
       </div>
@@ -44,4 +55,4 @@ const Category = ({ categoryName, idCategory }) => {
   );
 };
 
-export default Category;
+export default MoviesHome;
