@@ -1,0 +1,73 @@
+.quiz-container {
+  overflow: hidden;
+  text-align: center;
+  .quiz-card {
+    position: absolute;
+    opacity: 0;
+    @include transition(0.8s);
+    left: 50%;
+    transform: translate(-50%, 0);
+    z-index: 0;
+    border: 6px solid $color-purple;
+    border-radius: 11px;
+    box-shadow: 4px 4px 5px $color-grey;
+    padding: 15px;
+    margin-top: 30px;
+    @include respond-to('small') {
+      width: 95%;
+    }
+    &.active {
+      opacity: 1;
+      z-index: 1;
+    }
+    p {
+      font-weight: bold;
+      margin-bottom: 30px;
+    }
+    .btn-style {
+      margin: 10px 15px;
+      @include respond-to('small') {
+        margin: 10px 10px;
+        padding: 9px 14px;
+      }
+      &.selected {
+        background-color: $color-blue;
+      }
+    }
+    @keyframes showSlow {
+      0% {
+        opacity: 0;
+        transform: translate(-50%, 50px);
+      }
+      100% {
+        opacity: 1;
+        transform: translate(-50%, 100px);
+      }
+    }
+    .btn-confirm {
+      background-color: #26af26;
+      position: absolute;
+      left: 50%;
+      bottom: 0;
+      transform: translate(-50%, 50px);
+      opacity: 0;
+      animation: showSlow 0.5s linear forwards;
+    }
+  }
+  .quiz-card-score {
+    display: none;
+    &.active {
+      display: block;
+      position: relative;
+      z-index: 1;
+    }
+    .btn-container {
+      a {
+        margin: 0 15px;
+      }
+    }
+  }
+  .scores-container.hidden {
+    display: none;
+  }
+}
