@@ -36,6 +36,7 @@ const Category = ({ categoryName, idCategory }) => {
             />
 
             <h3>{movie.title}</h3>
+            <p>{movie.vote_average}/10</p>
           </div>
         ))}
       </div>

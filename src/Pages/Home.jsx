@@ -17,6 +17,7 @@ const Home = () => {
                   idCategory={'878'}
                 />
                 <MoviesHome categoryName={'Comedy'} idCategory={'35'} />
+                <MoviesHome categoryName={'Drama'} idCategory={'18'} />
               </div>
             </div>
           </div>
