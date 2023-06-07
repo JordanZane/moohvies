@@ -1,10 +1,13 @@
 import React, { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
 import Header from '../Components/Header';
 
-const MoviesByCategory = ({ categoryName, idCategory }) => {
+const MoviesByCategory = () => {
+  const { category } = useParams();
   const [movieData, setMovieData] = useState([]);
 
   useEffect(() => {
+    const idCategory = getCategoryID(category);
     const options = {
       method: 'GET',
       headers: {
@@ -21,7 +24,57 @@ const MoviesByCategory = ({ categoryName, idCategory }) => {
       .then((response) => response.json())
       .then((response) => setMovieData(response.results))
       .catch((err) => console.error(err));
-  }, [idCategory]);
+  }, [category]);
+
+  const getCategoryID = (categoryName) => {
+    let categoryId;
+    switch (categoryName.toLowerCase()) {
+      case 'action':
+        categoryId = '28';
+        break;
+      case 'sci-fi':
+        categoryId = '878';
+        break;
+      case 'comedy':
+        categoryId = '35';
+        break;
+      case 'drama':
+        categoryId = '18';
+        break;
+      case 'romance':
+        categoryId = '10749';
+        break;
+      case 'horror':
+        categoryId = '27';
+        break;
+      case 'thriller':
+        categoryId = '53';
+        break;
+      case 'crime':
+        categoryId = '80';
+        break;
+      case 'mystery':
+        categoryId = '9648';
+        break;
+      case 'family':
+        categoryId = '10751';
+        break;
+      case 'documentary':
+        categoryId = '99';
+        break;
+      case 'western':
+        categoryId = '37';
+        break;
+      case 'animation':
+        categoryId = '16';
+        break;
+      default:
+        categoryId = '';
+        break;
+    }
+
+    return categoryId;
+  };
 
   return (
     <>
@@ -30,7 +83,7 @@ const MoviesByCategory = ({ categoryName, idCategory }) => {
         <div className="container">
           <div className="row">
             <div className="col-md-12">
-              <h2>{categoryName}</h2>
+              <h2>{category}</h2>
               <div className="movies-container">
                 {movieData.map((movie) => (
                   <div
