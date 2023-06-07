@@ -26,7 +26,7 @@ const MoviesByCategory = ({ categoryName, idCategory }) => {
   return (
     <>
       <Header />
-      <main className="actions-page">
+      <main className="category-page">
         <div className="container">
           <div className="row">
             <div className="col-md-12">

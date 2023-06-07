@@ -22,43 +22,43 @@ const Navigation = () => {
                       Genres
                     </Dropdown.Toggle>
                     <Dropdown.Menu>
-                      <Dropdown.Item as={NavLink} to="/genres/action">
+                      <Dropdown.Item as={NavLink} to="/genres/Action">
                         Action
                       </Dropdown.Item>
-                      <Dropdown.Item as={NavLink} to="/genres/scifi">
+                      <Dropdown.Item as={NavLink} to="/genres/Sci-fi">
                         Sci-Fi
                       </Dropdown.Item>
-                      <Dropdown.Item as={NavLink} to="/genres/comedy">
+                      <Dropdown.Item as={NavLink} to="/genres/Comedy">
                         Comedy
                       </Dropdown.Item>
-                      <Dropdown.Item as={NavLink} to="/genres/drama">
+                      <Dropdown.Item as={NavLink} to="/genres/Drama">
                         Drama
                       </Dropdown.Item>
-                      <Dropdown.Item as={NavLink} to="/genres/romance">
+                      <Dropdown.Item as={NavLink} to="/genres/Romance">
                         Romance
                       </Dropdown.Item>
-                      <Dropdown.Item as={NavLink} to="/genres/horror">
+                      <Dropdown.Item as={NavLink} to="/genres/Horror">
                         Horror
                       </Dropdown.Item>
-                      <Dropdown.Item as={NavLink} to="/genres/thriller">
+                      <Dropdown.Item as={NavLink} to="/genres/Thriller">
                         Thriller
                       </Dropdown.Item>
-                      <Dropdown.Item as={NavLink} to="/genres/crime">
+                      <Dropdown.Item as={NavLink} to="/genres/Crime">
                         Crime
                       </Dropdown.Item>
-                      <Dropdown.Item as={NavLink} to="/genres/mystery">
+                      <Dropdown.Item as={NavLink} to="/genres/Mystery">
                         Mystery
                       </Dropdown.Item>
-                      <Dropdown.Item as={NavLink} to="/genres/familly">
+                      <Dropdown.Item as={NavLink} to="/genres/Familly">
                         Familly
                       </Dropdown.Item>
-                      <Dropdown.Item as={NavLink} to="/genres/familly">
+                      <Dropdown.Item as={NavLink} to="/genres/Documentary">
                         Documentary
                       </Dropdown.Item>
-                      <Dropdown.Item as={NavLink} to="/genres/western">
+                      <Dropdown.Item as={NavLink} to="/genres/Western">
                         Western
                       </Dropdown.Item>
-                      <Dropdown.Item as={NavLink} to="/genres/animation">
+                      <Dropdown.Item as={NavLink} to="/genres/Animation">
                         Animation
                       </Dropdown.Item>
                     </Dropdown.Menu>

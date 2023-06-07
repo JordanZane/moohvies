@@ -15,7 +15,7 @@ const MoviesHome = ({ categoryName, idCategory }) => {
     };
 
     fetch(
-      `https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US&page=1&sort_by=popularity.desc&with_genres=${idCategory}`,
+      `https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US&primary_release_year=2023&page=1&sort_by=popularity.desc&with_genres=${idCategory}`,
       options
     )
       .then((response) => response.json())
@@ -27,7 +27,7 @@ const MoviesHome = ({ categoryName, idCategory }) => {
     <div className="category-container">
       <div className="category-header">
         <h2>{categoryName}</h2>
-        <Link to={'/genres/' + idCategory}>
+        <Link to={'/genres/' + categoryName}>
           See more <i className="fa-solid fa-plus"></i>
         </Link>
       </div>
