@@ -34,21 +34,28 @@ const MovieCard = () => {
           <div className="row">
             <div className="col-md-12">
               <div className="movie-details-container">
-                <h2>{movie.title}</h2>
                 <div className="details-infos">
-                  <div className="img-container">
+                  <div className="img-container col-md-4 col-sm-12">
                     <img
                       src={`https://image.tmdb.org/t/p/w400/${movie.poster_path}`}
                       alt={movie.title}
                     />
                   </div>
-                  <div className="infos-content">
-                    <p>Release date : {movie.release_date}</p>
-                    <p>Synopsis : {movie.overview}</p>
+                  <div className="infos-content col-md-8 col-sm-12">
+                    <h2>{movie.title}</h2>
+                    <p>
+                      <span>Release date :</span> {movie.release_date}
+                    </p>
+                    <p>
+                      <span>Synopsis :</span> {movie.overview}
+                    </p>
                   </div>
                   <div className="rating-container">
                     <p>Vote : {movie.vote_count}</p>
-                    <p>{movie.vote_average.toFixed(1)}/10</p>
+                    <p>
+                      {movie.vote_average.toFixed(1)}/10{' '}
+                      <i className="fa-solid fa-star"></i>
+                    </p>
                   </div>
                 </div>
               </div>

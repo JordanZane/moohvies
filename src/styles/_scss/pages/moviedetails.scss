@@ -1,0 +1,22 @@
+.details-page {
+  margin-top: 50px;
+  h2 {
+    margin-bottom: 30px;
+  }
+  .details-infos {
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+    span {
+      color: $color-pink;
+    }
+  }
+  .rating-container {
+    position: absolute;
+    top: 0;
+    right: 0;
+    p {
+      color: $color-pink;
+    }
+  }
+}
