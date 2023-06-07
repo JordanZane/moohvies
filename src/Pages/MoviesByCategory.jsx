@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import Header from '../Components/Header';
 import { Link } from 'react-router-dom';
+import MovieCard from '../Components/MovieCard';
 
 const MoviesByCategory = () => {
   const { category } = useParams();
@@ -119,6 +120,7 @@ const MoviesByCategory = () => {
             </div>
           </div>
         </div>
+        {selectedMovieId && <MovieCard selectedMovieId={selectedMovieId} />}
       </main>
     </>
   );
