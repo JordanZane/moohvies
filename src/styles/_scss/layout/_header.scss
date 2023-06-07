@@ -57,10 +57,10 @@ header {
           padding: unset;
           background-color: $color-black;
           @include transition(0.4s);
+          transform: translate(0, 30px) !important;
         }
         .dropdown-menu.show {
           opacity: 1;
-          transform: unset;
         }
       }
     }

@@ -18,8 +18,8 @@ const Header = () => {
                 </Link>
               </h1>
               <p>
-                Welcome to Moohvies, discover the most popular movies of the
-                last year !
+                Welcome to Moohvies, discover the most popular movies of this
+                year !
               </p>
             </div>
           </div>
