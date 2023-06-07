@@ -34,11 +34,11 @@ const MoviesByCategory = ({ categoryName, idCategory }) => {
               <div className="movies-container">
                 {movieData.map((movie) => (
                   <div
-                    className="movie-content col-xl-2 col-lg-4 col-md-6 col-sm-12"
+                    className="movie-content col-xl-3 col-lg-4 col-md-6 col-sm-12"
                     key={movie.id}
                   >
                     <img
-                      src={`https://image.tmdb.org/t/p/w200/${movie.poster_path}`}
+                      src={`https://image.tmdb.org/t/p/w300/${movie.poster_path}`}
                       alt={movie.title}
                     />
                     <div className="infos">

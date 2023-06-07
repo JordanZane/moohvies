@@ -38,11 +38,29 @@ header {
           border: unset;
           padding: 0;
         }
+        .dropdown-item {
+          @include transition(0.4s);
+          color: $color-white;
+          &:hover {
+            background-color: $color-pink;
+          }
+        }
+        .dropdown-item.active {
+          background-color: $color-pink;
+          &::after {
+            content: unset;
+          }
+        }
         .dropdown-menu {
-          display: none;
+          opacity: 0;
+          display: initial;
+          padding: unset;
+          background-color: $color-black;
+          @include transition(0.4s);
         }
         .dropdown-menu.show {
-          display: initial;
+          opacity: 1;
+          transform: unset;
         }
       }
     }
@@ -52,7 +70,7 @@ header {
         border: unset;
         i {
           color: $color-white;
-          transition: all 0.4s ease-in;
+          @include transition(0.4s);
           &:hover {
             color: $color-pink;
             transform: scale(1.2);
