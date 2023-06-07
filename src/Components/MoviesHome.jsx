@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import MovieCard from './MovieCard';
 
 const MoviesHome = ({ categoryName, idCategory }) => {
   const [movies, setMovies] = useState([]);
+  const [selectedMovieId, setSelectedMovieId] = useState(null);
 
   useEffect(() => {
     const options = {
@@ -23,6 +25,10 @@ const MoviesHome = ({ categoryName, idCategory }) => {
       .catch((err) => console.error(err));
   }, [idCategory]);
 
+  const handleMovieClick = (movieId) => {
+    setSelectedMovieId(movieId);
+  };
+
   return (
     <div className="category-container">
       <div className="category-header">
@@ -37,10 +43,16 @@ const MoviesHome = ({ categoryName, idCategory }) => {
             className="movie-content col-xl-2 col-lg-4 col-md-6 col-sm-12"
             key={movie.id}
           >
-            <img
-              src={`https://image.tmdb.org/t/p/w200/${movie.poster_path}`}
-              alt={movie.title}
-            />
+            <Link
+              to={'/movie/' + movie.id}
+              onClick={() => handleMovieClick(movie.id)}
+            >
+              <img
+                src={`https://image.tmdb.org/t/p/w200/${movie.poster_path}`}
+                alt={movie.title}
+              />
+            </Link>
+
             <div className="infos">
               <h3>{movie.title}</h3>
               <p>
@@ -50,6 +62,7 @@ const MoviesHome = ({ categoryName, idCategory }) => {
           </div>
         ))}
       </div>
+      {selectedMovieId && <MovieCard selectedMovieId={selectedMovieId} />}
     </div>
   );
 };
