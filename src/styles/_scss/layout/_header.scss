@@ -58,9 +58,15 @@ header {
           background-color: $color-black;
           @include transition(0.4s);
           transform: translate(0, 30px) !important;
+          a {
+            display: none;
+          }
         }
         .dropdown-menu.show {
           opacity: 1;
+          a {
+            display: flex;
+          }
         }
       }
     }
