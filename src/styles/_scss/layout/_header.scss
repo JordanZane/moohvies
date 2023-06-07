@@ -2,6 +2,10 @@ header {
   .nav-bg {
     background-color: $color-grey-bg;
     padding: 0;
+    margin-top: 40px;
+  }
+  p {
+    text-align: center;
   }
   .menu {
     display: flex;

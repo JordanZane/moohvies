@@ -17,6 +17,10 @@ const Header = () => {
                   <img src={logoImg} alt="Moohvies" />
                 </Link>
               </h1>
+              <p>
+                Welcome to Moohvies, discover the most popular movies of the
+                last year !
+              </p>
             </div>
           </div>
         </div>

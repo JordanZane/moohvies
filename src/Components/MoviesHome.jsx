@@ -43,7 +43,6 @@ const MoviesHome = ({ categoryName, idCategory }) => {
             />
             <div className="infos">
               <h3>{movie.title}</h3>
-
               <p>
                 {movie.vote_average}/10<i className="fa-solid fa-star"></i>
               </p>
