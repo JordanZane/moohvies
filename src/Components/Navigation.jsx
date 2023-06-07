@@ -1,8 +1,11 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { Dropdown } from 'react-bootstrap';
+import { useState } from 'react';
 
 const Navigation = () => {
+  const [searchValue, setSearchValue] = useState('');
+
   return (
     <div className="container-fluid nav-bg">
       <div className="container">
@@ -61,39 +64,17 @@ const Navigation = () => {
                     </Dropdown.Menu>
                   </Dropdown>
                 </li>
-                <li>
-                  <Dropdown>
-                    <Dropdown.Toggle id="dropdownMenuButton">
-                      Years
-                    </Dropdown.Toggle>
-                    <Dropdown.Menu>
-                      <Dropdown.Item as={NavLink} to="/years/1970-1979">
-                        1970-1979
-                      </Dropdown.Item>
-                      <Dropdown.Item as={NavLink} to="/years/1980-1989">
-                        1980-1989
-                      </Dropdown.Item>
-                      <Dropdown.Item as={NavLink} to="/years/1990-1999">
-                        1990-1999
-                      </Dropdown.Item>
-                      <Dropdown.Item as={NavLink} to="/years/2000-2009">
-                        2000-2009
-                      </Dropdown.Item>
-                      <Dropdown.Item as={NavLink} to="/years/2010-2019">
-                        2010-2019
-                      </Dropdown.Item>
-                      <Dropdown.Item as={NavLink} to="/years/2020-2022">
-                        2020-2022
-                      </Dropdown.Item>
-                    </Dropdown.Menu>
-                  </Dropdown>
-                </li>
               </ul>
               <form>
                 <button type="submit">
                   <i className="fa-solid fa-magnifying-glass"></i>
                 </button>
-                <input type="text" placeholder="Search for movie" />
+                <input
+                  type="text"
+                  placeholder="Search for movie"
+                  value={searchValue}
+                  onChange={(e) => setSearchValue(e.target.value)}
+                />
               </form>
             </nav>
           </div>

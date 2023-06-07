@@ -11,13 +11,13 @@ const Home = () => {
           <div className="container">
             <div className="row">
               <div className="col-md-12">
-                <MoviesHome categoryName={'Action'} idCategory={'28'} />
+                <MoviesHome categoryName={'Action'} idCategory={'action'} />
                 <MoviesHome
                   categoryName={'Science Fiction'}
-                  idCategory={'878'}
+                  idCategory={'scifi'}
                 />
-                <MoviesHome categoryName={'Comedy'} idCategory={'35'} />
-                <MoviesHome categoryName={'Drama'} idCategory={'18'} />
+                <MoviesHome categoryName={'Comedy'} idCategory={'comedy'} />
+                <MoviesHome categoryName={'Drama'} idCategory={'drama'} />
               </div>
             </div>
           </div>
