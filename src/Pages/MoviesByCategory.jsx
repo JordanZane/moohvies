@@ -86,7 +86,7 @@ const MoviesByCategory = () => {
   return (
     <>
       <Header />
-      <main className="category-page">
+      <main className="movies-list-page">
         <div className="container">
           <div className="row">
             <div className="col-md-12">

@@ -1,10 +1,16 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 import { Dropdown } from 'react-bootstrap';
 import { useState } from 'react';
 
 const Navigation = () => {
   const [searchValue, setSearchValue] = useState('');
+  const navigate = useNavigate();
+
+  const handleSearch = (e) => {
+    e.preventDefault();
+    navigate(`/search/${searchValue}`);
+  };
 
   return (
     <div className="container-fluid nav-bg">
@@ -65,7 +71,7 @@ const Navigation = () => {
                   </Dropdown>
                 </li>
               </ul>
-              <form>
+              <form onSubmit={handleSearch}>
                 <button type="submit">
                   <i className="fa-solid fa-magnifying-glass"></i>
                 </button>
