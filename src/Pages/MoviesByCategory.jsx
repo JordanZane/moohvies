@@ -2,16 +2,10 @@ import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import Header from '../Components/Header';
 import { Link } from 'react-router-dom';
-import MovieCard from '../Components/MovieCard';
 
 const MoviesByCategory = () => {
   const { category } = useParams();
   const [movieData, setMovieData] = useState([]);
-  const [selectedMovieId, setSelectedMovieId] = useState(null);
-
-  const handleMovieClick = (movieId) => {
-    setSelectedMovieId(movieId);
-  };
 
   useEffect(() => {
     const idCategory = getCategoryID(category);
@@ -97,10 +91,7 @@ const MoviesByCategory = () => {
                     className="movie-content col-xl-3 col-lg-4 col-md-6 col-sm-12"
                     key={movie.id}
                   >
-                    <Link
-                      to={'/movie/' + movie.id}
-                      onClick={() => handleMovieClick(movie.id)}
-                    >
+                    <Link to={'/movie/' + movie.id}>
                       <img
                         src={`https://image.tmdb.org/t/p/w300/${movie.poster_path}`}
                         alt={movie.title}
@@ -120,7 +111,6 @@ const MoviesByCategory = () => {
             </div>
           </div>
         </div>
-        {selectedMovieId && <MovieCard selectedMovieId={selectedMovieId} />}
       </main>
     </>
   );

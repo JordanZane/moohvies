@@ -1,18 +1,12 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
 import Header from './Header';
-import MovieCard from './MovieCard';
 import { Link } from 'react-router-dom';
 import { useParams } from 'react-router-dom';
 
 const MovieSearch = () => {
   const [moviesSearch, setMovieSearch] = useState([]);
-  const [selectedMovieId, setSelectedMovieId] = useState(null);
   const { searchMovie } = useParams();
-
-  const handleMovieClick = (movieId) => {
-    setSelectedMovieId(movieId);
-  };
 
   useEffect(() => {
     const fetchMovies = async () => {
@@ -46,10 +40,7 @@ const MovieSearch = () => {
                     className="movie-content col-xl-3 col-lg-4 col-md-6 col-sm-12"
                     key={movie.id}
                   >
-                    <Link
-                      to={'/movie/' + movie.id}
-                      onClick={() => handleMovieClick(movie.id)}
-                    >
+                    <Link to={'/movie/' + movie.id}>
                       <img
                         src={`https://image.tmdb.org/t/p/w300/${movie.poster_path}`}
                         alt={movie.title}
@@ -69,7 +60,6 @@ const MovieSearch = () => {
             </div>
           </div>
         </div>
-        {selectedMovieId && <MovieCard selectedMovieId={selectedMovieId} />}
       </main>
     </>
   );
