@@ -2,10 +2,16 @@ import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import Header from '../Components/Header';
 import { Link } from 'react-router-dom';
+import NavigationPage from '../Components/NavigationPage';
 
 const MoviesByCategory = () => {
   const { category } = useParams();
   const [movieData, setMovieData] = useState([]);
+  const [numPage, setNumPage] = useState('1');
+
+  function handlePageNumber(number) {
+    setNumPage(number);
+  }
 
   useEffect(() => {
     const idCategory = getCategoryID(category);
@@ -19,13 +25,13 @@ const MoviesByCategory = () => {
     };
 
     fetch(
-      `https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US&sort_by=popularity.desc&with_genres=${idCategory}`,
+      `https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US&page=${numPage}&sort_by=popularity.desc&with_genres=${idCategory}`,
       options
     )
       .then((response) => response.json())
       .then((response) => setMovieData(response.results))
       .catch((err) => console.error(err));
-  }, [category]);
+  }, [numPage, category]);
 
   const getCategoryID = (categoryName) => {
     let categoryId;
@@ -112,6 +118,7 @@ const MoviesByCategory = () => {
           </div>
         </div>
       </main>
+      <NavigationPage handlePageNumber={handlePageNumber} />
     </>
   );
 };

@@ -1,14 +1,20 @@
 import React, { useEffect, useState } from 'react';
 import Header from '../Components/Header';
 import { Link } from 'react-router-dom';
+import NavigationPage from '../Components/NavigationPage';
 
 const PopularMovies = () => {
   const [popularMovies, setPopularMovies] = useState([]);
+  const [numPage, setNumPage] = useState('1');
+
+  function handlePageNumber(number) {
+    setNumPage(number);
+  }
 
   useEffect(() => {
     const fetchPopularMovies = async () => {
       const response = await fetch(
-        `https://api.themoviedb.org/3/movie/popular?language=en-US&page=1&primary_release_year=2023&api_key=be9dd8e37aa1203e8bd9f9175472c527`
+        `https://api.themoviedb.org/3/movie/popular?language=en-US&page=${numPage}&primary_release_year=2023&api_key=be9dd8e37aa1203e8bd9f9175472c527`
       );
       const data = await response.json();
       const dataMovies = data.results;
@@ -16,7 +22,7 @@ const PopularMovies = () => {
       setPopularMovies(dataMovies);
     };
     fetchPopularMovies();
-  }, []);
+  }, [numPage]);
 
   return (
     <>
@@ -53,6 +59,7 @@ const PopularMovies = () => {
           </div>
         </div>
       </main>
+      <NavigationPage handlePageNumber={handlePageNumber} />
     </>
   );
 };
