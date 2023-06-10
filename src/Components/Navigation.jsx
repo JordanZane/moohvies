@@ -73,6 +73,9 @@ const Navigation = () => {
                 <li>
                   <NavLink to="/most-popular">Most popular</NavLink>
                 </li>
+                <li>
+                  <NavLink to="/top-rated">Top rated</NavLink>
+                </li>
               </ul>
               <form onSubmit={handleSearch}>
                 <button type="submit">

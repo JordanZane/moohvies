@@ -2,20 +2,20 @@ import React, { useEffect, useState } from 'react';
 import Header from '../Components/Header';
 import { Link } from 'react-router-dom';
 
-const PopularMovies = () => {
-  const [popularMovies, setPopularMovies] = useState([]);
+const TopRatedMovies = () => {
+  const [topRatedMovies, setTopRatedMovies] = useState([]);
 
   useEffect(() => {
-    const fetchPopularMovies = async () => {
+    const fetchTopRatedMovies = async () => {
       const response = await fetch(
-        `https://api.themoviedb.org/3/movie/popular?language=en-US&page=1&primary_release_year=2023&api_key=be9dd8e37aa1203e8bd9f9175472c527`
+        `https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=1&primary_release_year=2023&api_key=be9dd8e37aa1203e8bd9f9175472c527`
       );
       const data = await response.json();
       const dataMovies = data.results;
       console.log(dataMovies);
-      setPopularMovies(dataMovies);
+      setTopRatedMovies(dataMovies);
     };
-    fetchPopularMovies();
+    fetchTopRatedMovies();
   }, []);
 
   return (
@@ -25,9 +25,9 @@ const PopularMovies = () => {
         <div className="container">
           <div className="row">
             <div className="col-md-12">
-              <h2>Most popular movies</h2>
+              <h2>Top rated movies</h2>
               <div className="movies-container">
-                {popularMovies.map((movie) => (
+                {topRatedMovies.map((movie) => (
                   <div
                     className="movie-content col-xl-3 col-lg-4 col-md-6 col-sm-12"
                     key={movie.id}
@@ -57,4 +57,4 @@ const PopularMovies = () => {
   );
 };
 
-export default PopularMovies;
+export default TopRatedMovies;
