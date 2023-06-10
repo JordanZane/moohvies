@@ -70,6 +70,9 @@ const Navigation = () => {
                     </Dropdown.Menu>
                   </Dropdown>
                 </li>
+                <li>
+                  <NavLink to="/most-popular">Most popular</NavLink>
+                </li>
               </ul>
               <form onSubmit={handleSearch}>
                 <button type="submit">

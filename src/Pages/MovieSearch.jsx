@@ -1,6 +1,6 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
-import Header from './Header';
+import Header from '../Components/Header';
 import { Link } from 'react-router-dom';
 import { useParams } from 'react-router-dom';
 
@@ -15,7 +15,6 @@ const MovieSearch = () => {
           `https://api.themoviedb.org/3/search/movie?query=${searchMovie}&include_adult=false&language=en-US&primary_release_year=2023&page=1&sort_by=popularity.desc&api_key=be9dd8e37aa1203e8bd9f9175472c527`
         );
         const data = await response.json();
-        console.log(data);
         const movies = data.results;
         setMovieSearch(movies);
       } catch (error) {
