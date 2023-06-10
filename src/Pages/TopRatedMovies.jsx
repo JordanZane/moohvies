@@ -6,9 +6,11 @@ import NavigationPage from '../Components/NavigationPage';
 const TopRatedMovies = () => {
   const [topRatedMovies, setTopRatedMovies] = useState([]);
   const [numPage, setNumPage] = useState('1');
+  const [clickedButton, setClickedButton] = useState('1');
 
   function handlePageNumber(number) {
     setNumPage(number);
+    setClickedButton(number);
   }
 
   useEffect(() => {
@@ -59,7 +61,10 @@ const TopRatedMovies = () => {
           </div>
         </div>
       </main>
-      <NavigationPage handlePageNumber={handlePageNumber} />
+      <NavigationPage
+        clickedButton={clickedButton}
+        handlePageNumber={handlePageNumber}
+      />
     </>
   );
 };

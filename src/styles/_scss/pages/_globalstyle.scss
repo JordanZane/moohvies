@@ -140,4 +140,21 @@ a {
 }
 
 .navigation-page {
+  text-align: center;
+  button {
+    background: $color-white;
+    border: none;
+    color: $color-black;
+    padding: 4px 12px;
+    @include transition(0.4s);
+    font-size: 18px;
+    &.active {
+      background-color: $color-pink;
+      font-weight: bold;
+    }
+    &:hover {
+      background-color: $color-pink;
+      font-weight: bold;
+    }
+  }
 }
