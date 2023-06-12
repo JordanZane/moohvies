@@ -32,14 +32,15 @@ const PopularMovies = () => {
   return (
     <>
       <Header />
-      {isDataLoading ? (
-        <Loader />
-      ) : (
-        <main className="movies-list-page">
-          <div className="container">
-            <div className="row">
-              <div className="col-md-12">
-                <h2>Most popular movies</h2>
+
+      <main className="movies-list-page">
+        <div className="container">
+          <div className="row">
+            <div className="col-md-12">
+              <h2>Most popular movies</h2>
+              {isDataLoading ? (
+                <Loader />
+              ) : (
                 <div className="movies-container">
                   {popularMovies.map((movie) => (
                     <div
@@ -63,11 +64,11 @@ const PopularMovies = () => {
                     </div>
                   ))}
                 </div>
-              </div>
+              )}
             </div>
           </div>
-        </main>
-      )}
+        </div>
+      </main>
 
       <NavigationPage
         clickedButton={clickedButton}

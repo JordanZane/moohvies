@@ -31,14 +31,15 @@ const MovieSearch = () => {
   return (
     <>
       <Header />
-      {isDataLoading ? (
-        <Loader />
-      ) : (
-        <main className="movies-list-page">
-          <div className="container">
-            <div className="row">
-              <div className="col-md-12">
-                <h2>{searchMovie}</h2>
+
+      <main className="movies-list-page">
+        <div className="container">
+          <div className="row">
+            <div className="col-md-12">
+              <h2>{searchMovie}</h2>
+              {isDataLoading ? (
+                <Loader />
+              ) : (
                 <div className="movies-container">
                   {moviesSearch.map((movie) => (
                     <div
@@ -62,11 +63,11 @@ const MovieSearch = () => {
                     </div>
                   ))}
                 </div>
-              </div>
+              )}
             </div>
           </div>
-        </main>
-      )}
+        </div>
+      </main>
     </>
   );
 };
