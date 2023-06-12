@@ -6,6 +6,7 @@ import MovieCard from './Components/MovieCard';
 import MovieSearch from './Pages/MovieSearch';
 import PopularMovies from './Pages/PopularMovies';
 import TopRatedMovies from './Pages/TopRatedMovies';
+import RecentMoviesPage from './Pages/RecentMoviesPage';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <Route path="/search/:searchMovie" element={<MovieSearch />} />
         <Route path="/most-popular" element={<PopularMovies />} />
         <Route path="/top-rated" element={<TopRatedMovies />} />
+        <Route path="/recent-movies" element={<RecentMoviesPage />} />
 
         <Route path="/*" element={<Home />} />
       </Routes>
