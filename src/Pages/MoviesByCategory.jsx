@@ -3,12 +3,14 @@ import { useParams } from 'react-router-dom';
 import Header from '../Components/Header';
 import { Link } from 'react-router-dom';
 import NavigationPage from '../Components/NavigationPage';
+import Loader from '../Components/Loader';
 
 const MoviesByCategory = () => {
   const { category } = useParams();
   const [movieData, setMovieData] = useState([]);
   const [numPage, setNumPage] = useState('1');
   const [clickedButton, setClickedButton] = useState('1');
+  const [isDataLoading, setIsDataLoading] = useState(true);
 
   function handlePageNumber(number) {
     setNumPage(number);
@@ -33,6 +35,7 @@ const MoviesByCategory = () => {
       .then((response) => response.json())
       .then((response) => setMovieData(response.results))
       .catch((err) => console.error(err));
+    setIsDataLoading(false);
   }, [numPage, category]);
 
   const getCategoryID = (categoryName) => {
@@ -94,29 +97,33 @@ const MoviesByCategory = () => {
           <div className="row">
             <div className="col-md-12">
               <h2>{category}</h2>
-              <div className="movies-container">
-                {movieData.map((movie) => (
-                  <div
-                    className="movie-content col-xl-3 col-lg-4 col-md-6 col-sm-12"
-                    key={movie.id}
-                  >
-                    <Link to={'/movie/' + movie.id}>
-                      <img
-                        src={`https://image.tmdb.org/t/p/w300/${movie.poster_path}`}
-                        alt={movie.title}
-                      />
-                    </Link>
+              {isDataLoading ? (
+                <Loader />
+              ) : (
+                <div className="movies-container">
+                  {movieData.map((movie) => (
+                    <div
+                      className="movie-content col-xl-3 col-lg-4 col-md-6 col-sm-12"
+                      key={movie.id}
+                    >
+                      <Link to={'/movie/' + movie.id}>
+                        <img
+                          src={`https://image.tmdb.org/t/p/w300/${movie.poster_path}`}
+                          alt={movie.title}
+                        />
+                      </Link>
 
-                    <div className="infos">
-                      <h3>{movie.title}</h3>
-                      <p>
-                        {movie.vote_average}/10
-                        <i className="fa-solid fa-star"></i>
-                      </p>
+                      <div className="infos">
+                        <h3>{movie.title}</h3>
+                        <p>
+                          {movie.vote_average}/10
+                          <i className="fa-solid fa-star"></i>
+                        </p>
+                      </div>
                     </div>
-                  </div>
-                ))}
-              </div>
+                  ))}
+                </div>
+              )}
             </div>
           </div>
         </div>
