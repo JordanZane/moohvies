@@ -1,6 +1,13 @@
 .home {
-  .category-container {
+  section {
     margin: 50px 0;
+  }
+
+  .category-container {
+    margin-bottom: 50px;
+    &:last-child {
+      margin-bottom: 0;
+    }
     .category-header {
       display: flex;
       justify-content: space-between;

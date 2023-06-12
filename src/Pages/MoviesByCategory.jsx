@@ -88,6 +88,7 @@ const MoviesByCategory = () => {
   return (
     <>
       <Header />
+      <div id="top-page"></div>
       <main className="movies-list-page">
         <div className="container">
           <div className="row">

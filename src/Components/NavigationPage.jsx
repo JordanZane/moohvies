@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const NavigationPage = ({ handlePageNumber, clickedButton }) => {
   return (
@@ -9,24 +10,24 @@ const NavigationPage = ({ handlePageNumber, clickedButton }) => {
             <nav className="navigation-page">
               <ul>
                 <li>
-                  <button
+                  <Link
                     className={clickedButton === '1' ? 'active' : ''}
                     onClick={() => handlePageNumber('1')}
                   >
                     1
-                  </button>
-                  <button
+                  </Link>
+                  <Link
                     className={clickedButton === '2' ? 'active' : ''}
                     onClick={() => handlePageNumber('2')}
                   >
                     2
-                  </button>
-                  <button
+                  </Link>
+                  <Link
                     className={clickedButton === '3' ? 'active' : ''}
                     onClick={() => handlePageNumber('3')}
                   >
                     3
-                  </button>
+                  </Link>
                 </li>
               </ul>
             </nav>

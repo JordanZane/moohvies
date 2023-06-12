@@ -4,6 +4,7 @@ body {
   font-size: 16px;
   letter-spacing: 1px;
   background-color: $color-black;
+  scroll-behavior: smooth;
   @include respond-to('small') {
     font-size: 16px;
   }
@@ -141,7 +142,7 @@ a {
 
 .navigation-page {
   text-align: center;
-  button {
+  a {
     background: $color-white;
     border: none;
     color: $color-black;

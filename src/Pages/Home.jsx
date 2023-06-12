@@ -1,12 +1,22 @@
 import React from 'react';
 import Header from '../Components/Header';
 import MoviesHome from '../Components/MoviesHome';
+import RecentMovies from '../Components/RecentMovies';
 
 const Home = () => {
   return (
     <>
       <Header />
       <main className="home">
+        <section className="section">
+          <div className="container">
+            <div className="row">
+              <div className="col-md-12">
+                <RecentMovies />
+              </div>
+            </div>
+          </div>
+        </section>
         <section className="section">
           <div className="container">
             <div className="row">
