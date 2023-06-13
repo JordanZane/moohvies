@@ -22,6 +22,9 @@ header {
         &::after {
           display: none;
         }
+        i {
+          font-size: 28px;
+        }
       }
       .dropdown-menu.show {
         background-color: $color-grey-bg;
