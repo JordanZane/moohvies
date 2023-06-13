@@ -22,7 +22,6 @@ const PopularMovies = () => {
       );
       const data = await response.json();
       const dataMovies = data.results;
-      console.log(dataMovies);
       setPopularMovies(dataMovies);
       setIsDataLoading(false);
     };

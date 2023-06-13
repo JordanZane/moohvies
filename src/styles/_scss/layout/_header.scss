@@ -13,6 +13,9 @@ header {
     align-items: center;
     ul {
       display: flex;
+      @include respond-to('small') {
+        display: none;
+      }
       li {
         margin: 0 15px;
         a {

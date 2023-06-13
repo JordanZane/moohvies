@@ -20,7 +20,7 @@
         position: relative;
 
         i {
-          transition: all 0.4s ease-in;
+          @include transition(0.4s);
         }
         &:hover {
           i {
@@ -32,8 +32,18 @@
     .movies-container {
       display: flex;
       flex-wrap: wrap;
+      @include respond-to('small') {
+        justify-content: center;
+      }
       .movie-content {
         text-align: center;
+        @include respond-to('xlarge') {
+          margin: 15px;
+        }
+        @include respond-to('large') {
+          margin: unset;
+          margin-bottom: 30px;
+        }
         .infos {
           h3 {
             margin-bottom: 0;

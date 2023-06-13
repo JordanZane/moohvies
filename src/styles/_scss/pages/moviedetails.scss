@@ -7,6 +7,12 @@
     display: flex;
     flex-wrap: wrap;
     position: relative;
+
+    .infos-content {
+      @include respond-to('xlarge') {
+        padding-left: 15px;
+      }
+    }
     span {
       color: $color-pink;
     }
@@ -15,6 +21,10 @@
     position: absolute;
     top: 0;
     right: 0;
+    @include respond-to('small') {
+      position: relative;
+      padding-left: 15px;
+    }
     p {
       color: $color-pink;
     }

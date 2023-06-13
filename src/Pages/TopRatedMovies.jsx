@@ -22,7 +22,6 @@ const TopRatedMovies = () => {
       );
       const data = await response.json();
       const dataMovies = data.results;
-      console.log(dataMovies);
       setTopRatedMovies(dataMovies);
       setIsDataLoading(false);
     };

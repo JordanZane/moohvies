@@ -7,7 +7,6 @@ import MovieSearch from './Pages/MovieSearch';
 import PopularMovies from './Pages/PopularMovies';
 import TopRatedMovies from './Pages/TopRatedMovies';
 import RecentMoviesPage from './Pages/RecentMoviesPage';
-import Test from './Pages/Test';
 
 function App() {
   return (
