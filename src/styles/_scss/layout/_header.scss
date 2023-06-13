@@ -13,8 +13,33 @@ header {
     align-items: center;
     ul.sm-menu {
       display: none;
+      @include respond-to('small') {
+        display: initial;
+      }
+      #dropdownMenuBurger {
+        background: unset;
+        border: unset;
+        &::after {
+          display: none;
+        }
+      }
+      .dropdown-menu.show {
+        background-color: $color-grey-bg;
+        padding-left: 10px;
+        .dropdown-item {
+          color: $color-white;
+          &.active {
+            background-color: $color-pink;
+          }
+        }
+      }
+      button#dropdownMenuButton {
+        background: unset;
+        border: unset;
+        padding-left: 0;
+      }
     }
-    ul {
+    ul.dk-menu {
       display: flex;
       @include respond-to('small') {
         display: none;
