@@ -77,6 +77,65 @@ const Navigation = () => {
                   <NavLink to="/top-rated">Top rated</NavLink>
                 </li>
               </ul>
+              <ul className="sm-menu">
+                <li>
+                  <NavLink to="/">Home</NavLink>
+                </li>
+                <li>
+                  <Dropdown>
+                    <Dropdown.Toggle id="dropdownMenuButton">
+                      Genres
+                    </Dropdown.Toggle>
+                    <Dropdown.Menu>
+                      <Dropdown.Item as={NavLink} to="/genres/Action">
+                        Action
+                      </Dropdown.Item>
+                      <Dropdown.Item as={NavLink} to="/genres/Sci-fi">
+                        Sci-Fi
+                      </Dropdown.Item>
+                      <Dropdown.Item as={NavLink} to="/genres/Comedy">
+                        Comedy
+                      </Dropdown.Item>
+                      <Dropdown.Item as={NavLink} to="/genres/Drama">
+                        Drama
+                      </Dropdown.Item>
+                      <Dropdown.Item as={NavLink} to="/genres/Romance">
+                        Romance
+                      </Dropdown.Item>
+                      <Dropdown.Item as={NavLink} to="/genres/Horror">
+                        Horror
+                      </Dropdown.Item>
+                      <Dropdown.Item as={NavLink} to="/genres/Thriller">
+                        Thriller
+                      </Dropdown.Item>
+                      <Dropdown.Item as={NavLink} to="/genres/Crime">
+                        Crime
+                      </Dropdown.Item>
+                      <Dropdown.Item as={NavLink} to="/genres/Mystery">
+                        Mystery
+                      </Dropdown.Item>
+                      <Dropdown.Item as={NavLink} to="/genres/Familly">
+                        Familly
+                      </Dropdown.Item>
+                      <Dropdown.Item as={NavLink} to="/genres/Documentary">
+                        Documentary
+                      </Dropdown.Item>
+                      <Dropdown.Item as={NavLink} to="/genres/Western">
+                        Western
+                      </Dropdown.Item>
+                      <Dropdown.Item as={NavLink} to="/genres/Animation">
+                        Animation
+                      </Dropdown.Item>
+                    </Dropdown.Menu>
+                  </Dropdown>
+                </li>
+                <li>
+                  <NavLink to="/most-popular">Most popular</NavLink>
+                </li>
+                <li>
+                  <NavLink to="/top-rated">Top rated</NavLink>
+                </li>
+              </ul>
               <form onSubmit={handleSearch}>
                 <button type="submit">
                   <i className="fa-solid fa-magnifying-glass"></i>
