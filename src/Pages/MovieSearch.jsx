@@ -4,6 +4,7 @@ import Header from '../Components/Header';
 import { Link } from 'react-router-dom';
 import { useParams } from 'react-router-dom';
 import Loader from '../Components/Loader';
+import Footer from '../Components/Footer';
 
 const MovieSearch = () => {
   const [moviesSearch, setMovieSearch] = useState([]);
@@ -68,6 +69,7 @@ const MovieSearch = () => {
           </div>
         </div>
       </main>
+      <Footer />
     </>
   );
 };

@@ -2,6 +2,7 @@ import React from 'react';
 import Header from '../Components/Header';
 import MoviesHome from '../Components/MoviesHome';
 import RecentMovies from '../Components/RecentMovies';
+import Footer from '../Components/Footer';
 
 const Home = () => {
   return (
@@ -30,6 +31,7 @@ const Home = () => {
           </div>
         </section>
       </main>
+      <Footer />
     </>
   );
 };

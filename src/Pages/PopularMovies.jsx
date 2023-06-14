@@ -3,6 +3,7 @@ import Header from '../Components/Header';
 import { Link } from 'react-router-dom';
 import Loader from '../Components/Loader';
 import NavigationPage from '../Components/NavigationPage';
+import Footer from '../Components/Footer';
 
 const PopularMovies = () => {
   const [popularMovies, setPopularMovies] = useState([]);
@@ -73,6 +74,7 @@ const PopularMovies = () => {
         clickedButton={clickedButton}
         handlePageNumber={handlePageNumber}
       />
+      <Footer />
     </>
   );
 };

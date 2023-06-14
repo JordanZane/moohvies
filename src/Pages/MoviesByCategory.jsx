@@ -4,6 +4,7 @@ import Header from '../Components/Header';
 import { Link } from 'react-router-dom';
 import NavigationPage from '../Components/NavigationPage';
 import Loader from '../Components/Loader';
+import Footer from '../Components/Footer';
 
 const MoviesByCategory = () => {
   const { category } = useParams();
@@ -132,6 +133,7 @@ const MoviesByCategory = () => {
         clickedButton={clickedButton}
         handlePageNumber={handlePageNumber}
       />
+      <Footer />
     </>
   );
 };

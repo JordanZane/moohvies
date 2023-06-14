@@ -3,6 +3,7 @@ import Header from '../Components/Header';
 import { Link } from 'react-router-dom';
 import NavigationPage from '../Components/NavigationPage';
 import Loader from '../Components/Loader';
+import Footer from '../Components/Footer';
 
 const TopRatedMovies = () => {
   const [topRatedMovies, setTopRatedMovies] = useState([]);
@@ -71,6 +72,7 @@ const TopRatedMovies = () => {
         clickedButton={clickedButton}
         handlePageNumber={handlePageNumber}
       />
+      <Footer />
     </>
   );
 };

@@ -138,6 +138,9 @@ a {
   &.active {
     color: $color-pink;
   }
+  &:hover {
+    color: $color-pink;
+  }
 }
 
 .navigation-page {

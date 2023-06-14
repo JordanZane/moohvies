@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import Header from '../Components/Header';
 import Loader from '../Components/Loader';
+import Footer from '../Components/Footer';
 
 const RecentMoviesPage = () => {
   const [recentMovies, setRecentMovies] = useState([]);
@@ -64,6 +65,7 @@ const RecentMoviesPage = () => {
           </div>
         </div>
       </main>
+      <Footer />
     </>
   );
 };

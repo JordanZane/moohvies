@@ -80,7 +80,7 @@ const Navigation = () => {
               <ul className="sm-menu">
                 <Dropdown>
                   <Dropdown.Toggle id="dropdownMenuBurger">
-                    <i class="fa-solid fa-bars"></i>
+                    <i className="fa-solid fa-bars"></i>
                   </Dropdown.Toggle>
                   <Dropdown.Menu>
                     <li>
