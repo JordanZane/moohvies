@@ -16,6 +16,16 @@ const Legal = () => {
                 moohvies.jordanzanetti.fr which utilizes data from an external
                 API.
               </p>
+              <p>
+                API web site :{' '}
+                <a
+                  target="_blank"
+                  rel="noreferrer"
+                  href="https://developer.themoviedb.org/docs"
+                >
+                  https://developer.themoviedb.org/docs
+                </a>
+              </p>
               <h3>Use of API Data</h3>
               <p>
                 The Website utilizes data from an external API to provide
